@@ -3,7 +3,7 @@ class MiFooter
   connectedCallback() {
     this.innerHTML = /* html */
       `&copy; 2021
-      Gilberto Pacheco Gallegos.`;
+     Marian Araceli García Alvarado, IC-52M.`;
   }
 }
 customElements.define(
