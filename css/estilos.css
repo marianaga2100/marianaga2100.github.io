@@ -8,15 +8,15 @@
    * colocarse en el elemento
    * raíz. */
   /* Propiedades de la interfaz */
-  --colorPrimario: white;
-  --colorPrimarioFondo: #9c27b0;
-  --colorActive: #4646462c;
-  --colorContenido: black;
+  --colorPrimario: black;
+  --colorPrimarioFondo: #64f0e9;
+  --colorActive: #64f0e9;
+  --colorContenido: rgb(255, 255, 255);
   --colorContenidoFondo: white;
   /* Propiedades para campos */
-  --colorSinFoco: gray;
-  --colorConFoco: #6a0080;
-  --colorError: #d05ce3;
+  --colorSinFoco: black;
+  --colorConFoco: #21eb8d;
+  --colorError: #000000;
   --colorCampo: #eeeeee;
   /* Los 2 primeros fonts son para
    * apple y "Roboto" es para
@@ -38,8 +38,8 @@ body {
   margin: 0;
 	padding: 0;
 	font-family: Helvetica, Arial, sans-serif;
-	color: #666;
-	background: #f2f2f2; 
+	color: black;
+	background: white; 
 	font-size: 1em;
 	line-height: 1.5em;
 	
@@ -67,16 +67,16 @@ header {
 }
 
 .herramientas {
-  display: flex;
+  display: contents;
   padding: 1rem;
-  position: relative;
+  position: inherit;
   gap: 1.5rem;
 }
 
 h1 {
-  margin: 0 auto 0 0;
+  margin: 2 auto 0 0;
   padding: 0;
-  font-size: 1.25rem;
+  font-size: 40px;
 }
 
 .ios h1 {
@@ -142,7 +142,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #d05ce3;
-  color: white;
+  background-color: #64f0e9;
+  color: black;
   text-align: center;
 }
