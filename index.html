@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width,
+     initial-scale=1.0">
+  <title>Inicio</title>
+  <link rel="stylesheet"
+    href="css/estilos.css">
+</head>
+<body>
+  <script type="module"
+    src="js/config.js"></script>
+  <header>
+    <h1>Inicio</h1>
+  </header>
+  <campo-dinamico>
+    <input id="nombre" required>
+    <label for="nombre">
+      Nombre*
+    </label>
+    <small>*Requerido</small>
+  </campo-dinamico>
+  <campo-dinamico>
+    <input id="email"
+      type="email">
+    <label for="email">
+      Email
+    </label>
+  </campo-dinamico>
+  <campo-dinamico>
+    <textarea id="dirección"
+      rows="3"
+      required></textarea>
+    <label for="dirección">
+      Dirección
+    </label>
+  </campo-dinamico>
+  <campo-dinamico>
+    <select id="grupo" rows="3">
+      <option value=""></option>
+      <option value="IC21">
+        IC-21
+      </option>
+      <option value="IC22">
+        IC-22
+      </option>
+      <option value="IC23">
+        IC-23
+      </option>
+    </select>
+    <label for="grupo">
+      Grupo
+    </label>
+  </campo-dinamico>
+  <p>
+    <label>
+      Muestra resultados
+      <input type="checkbox">
+      <span class="on
+        material-icons">
+        toggle_on
+      </span>
+      <span class="off
+        material-icons">
+        toggle_off
+      </span>
+    </label>
+  </p>
+  <mi-nav></mi-nav>
+</body>
+</html>
