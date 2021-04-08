@@ -1,5 +1,5 @@
 // @ts-ignore
-firebase.initializeApp ({
+ firebase.initializeApp({
     apiKey: "AIzaSyBG8XkE_IU1bW_TvHir7EMZiggwl2GO_7o",
     authDomain: "magaiot.firebaseapp.com",
     projectId: "magaiot",
