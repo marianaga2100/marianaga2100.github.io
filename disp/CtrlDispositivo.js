@@ -1,4 +1,3 @@
-  
 import {
   ProxyEntrada
 } from "./ProxyEntrada.js";
