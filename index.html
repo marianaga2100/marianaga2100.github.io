@@ -1,73 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width,
-     initial-scale=1.0">
-  <title>Inicio</title>
-  <link rel="stylesheet"
-    href="css/estilos.css">
-</head>
-<body>
-  <script type="module"
-    src="js/config.js"></script>
-  <header>
-    <h1>Inicio</h1>
-  </header>
-  <campo-dinamico>
-    <input id="nombre" required>
-    <label for="nombre">
-      Nombre*
-    </label>
-    <small>*Requerido</small>
-  </campo-dinamico>
-  <campo-dinamico>
-    <input id="email"
-      type="email">
-    <label for="email">
-      Email
-    </label>
-  </campo-dinamico>
-  <campo-dinamico>
-    <textarea id="dirección"
-      rows="3"
-      required></textarea>
-    <label for="dirección">
-      Dirección
-    </label>
-  </campo-dinamico>
-  <campo-dinamico>
-    <select id="grupo" rows="3">
-      <option value=""></option>
-      <option value="IC21">
-        IC-21
-      </option>
-      <option value="IC22">
-        IC-22
-      </option>
-      <option value="IC23">
-        IC-23
-      </option>
-    </select>
-    <label for="grupo">
-      Grupo
-    </label>
-  </campo-dinamico>
-  <p>
-    <label>
-      Muestra resultados
-      <input type="checkbox">
-      <span class="on
-        material-icons">
-        toggle_on
-      </span>
-      <span class="off
-        material-icons">
-        toggle_off
-      </span>
-    </label>
-  </p>
-  <mi-nav></mi-nav>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+      content="width=device-width,
+      initial-scale=1.0">
+    <title>Control IoT</title>
+    <script
+      src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
+    <script src="js/init.js">
+    </script>
+    <link href="css/estilos.css"
+      rel="stylesheet">
+    <script type="module"
+      src="cmp/mi-footer.js">
+      </script>
+  </head>
+  <body>
+    <div class="contenido">
+      <h1>Control IoT</h1>
+      <p>
+        <a href="dispositivo.html"
+          target="_blank">Ver
+          dispositivo
+          simulado.</a>
+      </p>
+      <p>
+        <a href="historial.html"
+          target="_blank">Ver
+          historial.</a>
+      </p>
+      <p>
+        <label>
+          Dispositivo
+          <output
+            id="ctDispositivo">
+          </output>
+        </label>
+      </p>
+      <p>
+        <label>
+          Entrada
+          <meter id="ctEntrada"
+            min="0" max="10">
+          </meter>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input id=ctSalida
+            type="checkbox">
+          Salida
+        </label>
+      </p>
+      <mi-footer></mi-footer>
+    </div>
+    <script type="module"
+      src="js/CtrlMovil.js">
+      </script>
+  </body>
 </html>
