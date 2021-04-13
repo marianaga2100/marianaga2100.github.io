@@ -11,11 +11,15 @@
   <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
   <script src="js/init.js"></script>
 
-  <meta name="theme-color" content="#9c27b0">
+
   <meta name="apple-mobile-web-app-title" content="dmppwa">
   <meta name="apple-mobile-web-app-capable"content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="icon" sizes="32x32" href="favicon.ico">
+  <link rel="apple-touch-icon" href="img/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="256x256" href="img/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="1024x1024" href="img/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="2048x2048" href="img/favicon-96x96.png">
 
   <link rel="manifest" href="./manifest.json">
 
@@ -28,21 +32,23 @@
     <div class="herramientas" >
       <h1 >Control IoT</h1>
     </div>
+    
   </header>
   <div class="contenido">
     <p>
+      <button class="btn btn-dark btn btn-secondary " type="submit"  style="background-color: rgb(255, 119, 119);">
       <a href="dispositivo.html"
-        target="_blank">Ver
-        dispositivo
-        simulado.</a>
+        target="_blank" style="color: black;">Ver dispositivo simulado.</a>
+      </button>
     </p>
     <p>
+      <button class="btn btn-dark btn btn-secondary " type="submit"  style="background-color: rgb(255, 119, 119);" >
       <a href="historial.html"
-        target="_blank">Ver
-        historial.</a>
+        target="_blank" style="color: black;">Ver historial.</a>
+      </button>
     </p>
     <p>
-      <label>
+      <label style="color: blueviolet;">
         Dispositivo
         <output
           id="ctDispositivo">
