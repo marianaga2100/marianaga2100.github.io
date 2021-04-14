@@ -2,7 +2,7 @@
 const CACHE_NAME = 'app_cache_marian2',
   urlsToCache = [
     './',
-    'css/estilo.css',
+    'css/estilos.css',
     'disp/CtrlDispositivo.js',
     'disp/ProxyEntrada.js',
     'disp/ProxyHistorial.js',
