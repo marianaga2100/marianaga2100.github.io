@@ -41,7 +41,7 @@ self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys()
       .then(cacheNames => {
-        return Promise.all(
+        return caches.addAll(
           cacheNames.map(cacheName => {
             //Eliminamos lo que ya no se necesita en cache
             if (cacheWhitelist.indexOf(cacheName) === -1) {
