@@ -9,17 +9,5 @@
   "display": "standalone",
   "start_url": "index.html",
   "scope": "./",
-  "lang": "es-MX",
-  "icons": [
-    {
-      "src": "img/icono2048.png",
-      "sizes": "2048x2048",
-      "type": "image/png"
-    },
-    {
-      "src": "img/icono1024.png",
-      "sizes": "1024x1024",
-      "type": "image/png"
-    }
-  ]
+  "lang": "es-MX"
 }
