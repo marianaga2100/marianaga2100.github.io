@@ -45,7 +45,7 @@ self.addEventListener('activate', e => {
           cacheNames.map(cacheName => {
             //Eliminamos lo que ya no se necesita en cache
             if (cacheWhitelist.indexOf(cacheName) === -1) {
-              return caches.delete(cacheName)
+              return cacheNames.delete(cacheName)
             }
           })
         )
