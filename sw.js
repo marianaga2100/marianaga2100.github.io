@@ -1,5 +1,5 @@
 //asignar un nombre y versión al cache
-const CACHE_NAME = 'app_cache_marian2',
+const CACHE_NAME = 'app_cache_marian3',
   urlsToCache = [
     './',
     'css/estilos.css',
