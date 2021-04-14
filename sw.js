@@ -1,8 +1,8 @@
 //asignar un nombre y versión al cache
-const CACHE_NAME = 'app_cache_1',
-  urlsToCache = [
+const CACHE = 'app_cache_marian5',
+  ARCHIVOS = [
     './',
-    'css/estilos.css',
+    'css/estilo.css',
     'disp/CtrlDispositivo.js',
     'disp/ProxyEntrada.js',
     'disp/ProxyHistorial.js',
@@ -21,52 +21,53 @@ const CACHE_NAME = 'app_cache_1',
     'favicon.ico',
     'historial.html',
     'index.html'
-  ]
-//durante la fase de instalación, generalmente se almacena en caché los activos estáticos
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        return cache.addAll(urlsToCache)
-          .then(() => self.skipWaiting())
-      })
-      .catch(err => console.log('Falló registro de cache', err))
-  )
-})
+  ];
 
-//una vez que se instala el SW, se activa y busca los recursos para hacer que funcione sin conexión
-self.addEventListener('activate', e => {
-  const cacheWhitelist = [CACHE_NAME]
+  self.addEventListener("install",
+  evt => {
+    console.log("sw instalado.");
+    /* Realiza la instalación.
+     * Carga los archivos
+     * requeridos en la caché. */
+    evt.waitUntil(cargaCache());
+  });
 
-  e.waitUntil(
-    caches.keys()
-      .then(cacheNames => {
-        return Promise.all(
-          cacheNames.map(cacheName => {
-            //Eliminamos lo que ya no se necesita en cache
-            if (cacheWhitelist.indexOf(cacheName) === -1) {
-              return caches.delete(cacheName)
-            }
-          })
-        )
-      })
-      // Le indica al SW activar el cache actual
-      .then(() => self.clients.claim())
-  )
-})
+/* Toma los archivos solicitados
+ * de la caché; si no los
+ * encuentra, se descargan. */
+self.addEventListener("fetch",
+  evt => {
+    if (evt.request.method ===
+      "GET") {
+      evt.respondWith(
+        usaCache(evt));
+    }
+  });
 
-//cuando el navegador recupera una url
-self.addEventListener('fetch', e => {
-  //Responder ya sea con el objeto en caché o continuar y buscar la url real
-  e.respondWith(
-    caches.match(e.request)
-      .then(res => {
-        if (res) {
-          //recuperar del cache
-          return res
-        }
-        //recuperar de la petición a la url
-        return fetch(e.request)
-      }).catch(err => console.log('Falló algo al solicitar recursos', err))
-  )
-})
+self.addEventListener("activate",
+  () =>
+    console.log("sw activo."));
+
+async function cargaCache() {
+  console.log(
+    "Intentando cargar cache",
+    CACHE);
+  const cache =
+    await caches.open(CACHE);
+  await cache.addAll(ARCHIVOS);
+  console.log("Cache", CACHE,
+    "cargado");
+}
+
+async function usaCache(evt) {
+  const cache =
+    await caches.open(CACHE);
+  const response =
+    await cache.match(evt.request,
+      { ignoreSearch: true });
+  if (response) {
+    return response;
+  } else {
+    return fetch(evt.request);
+  }
+}
