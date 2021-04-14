@@ -20,11 +20,6 @@
       "src": "img/icono1024.png",
       "sizes": "1024x1024",
       "type": "image/png"
-    },
-    {
-      "src": "img/icono256.png",
-      "sizes": "256x256",
-      "type": "image/png"
     }
   ]
 }
